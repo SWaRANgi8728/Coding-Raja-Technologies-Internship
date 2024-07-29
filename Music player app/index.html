@@ -1,0 +1,149 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="script.js"></script>
+    <style>
+        .d1{
+            margin-top:25px;
+        }
+        .track-art {
+            background-image: url('music1.png');
+            background-position: center;
+            background-size: cover; 
+            width: 300px; 
+            height: 300px; 
+            margin: 0 auto; 
+            overflow: hidden; 
+        }
+        .btns{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .playpause-track,.prev-track,.next-track{
+            padding: 20px;
+            opacity: 0.8;
+            transition: opacity.2s;
+        }
+        .playpause-track:hover,
+        .prev-track:hover,
+        .next-track:hover{
+            opacity: 1.0;
+        }
+        .progress-container {
+            width: 75%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 20px auto; 
+        }
+        .progress-container input[type="range"] {
+            width: 100%; 
+            margin-top: 10px;
+        }
+        .progress-container i {
+            font-size: 1.5rem;
+            margin: 0 10px; 
+        }
+        .seek-slider,.volume-slider{
+            -webkit-appearance:none;
+            /*-moz-appearance:none;*/
+            appearance: none;
+            height:5px;
+            background: black;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity.2s;
+            
+        }
+        .seek-slider::-webkit-slider-thumb,
+        .volume-slider::-webkit-slider-thumb{
+            -webkit-appearance:none;
+            /*-moz-appearance:none;*/
+            appearance: none;
+            width: 15px;
+            height: 15px;
+            background: white;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .seek-slider:hover,
+        .volume-slider:hover{
+            opacity: 1.0;
+        }
+        .current-time,.total-duration{
+            padding: 10px;
+        }
+        i.fa-circle-play,
+        i.fa-backward-step,
+        i.fa-forward-step
+        {
+           cursor: pointer;
+        }
+        .marquee {
+            width: 100%; 
+            overflow: hidden; 
+            white-space: nowrap; 
+        }
+        .marquee h1.track-name {
+            animation: marquee 10s linear infinite; 
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); } 
+            100% { transform: translateX(-100%); }
+        }
+        .fa-volume-low,
+        .fa-volume-high {
+            opacity: 0.7;
+        }
+        .fa-volume-low:hover,
+        .fa-volume-high:hover {
+            opacity: 1.0;
+        }
+    </style>    
+</head>
+<body class="bg-dark">
+    <div class="container shadow-lg p-1"><!--style="background-color:#bc6fb6e9"-->
+        <!--displayimg details-->
+        <div class="d1">
+            <h4 class="now-play text-center text-muted">Playing 1 Of 4</h1>
+            <div class="track-art rounded-circle img-thumbnail"></div>
+            <div class="marquee"><h1 class="track-name text-center" style="font-size: 3rem;">Track-Name</h1></div>
+            <h5 class="track-artist text-center" style="font-size: 1.5rem;">Track-Artist </h1>
+        </div>  
+        
+        <!--display track buttons-->
+        <div class="btns">
+            <div class="prev-track my-3" > 
+                <i class="fa-solid fa-backward-step fa-2x"></i>
+            </div>   
+            <div class="playpause-track">
+                <i class="fa-solid fa-circle-play fa-5x "></i>
+            </div>     
+            <div class="next-track my-3" >
+                <i class="fa-solid fa-forward-step fa-2x"></i>
+            </div>    
+        </div> 
+        
+        <!--displau slider-->
+        <div class="progress-container">
+            <div class="current-time text-center p-2">00:00</div>  
+            <input type="range" min="1" max="100" value="99" class="seek-slider" >
+            <div class="total-duration p-2">00:00</div>
+        </div>
+
+        <!--display volume slider-->
+        <div class="progress-container" style="width:200px">
+            <i class="fa-solid fa-volume-low" style="padding: 10px;"></i>
+            <input type="range" min="1" max="100" va;lue="99" class="volume-slider" >
+            <i class="fa-solid fa-volume-high" style="padding: 10px;"></i>
+        </div>    
+    </div>    
+</body>
+</html>
