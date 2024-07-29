@@ -238,48 +238,7 @@ for (let i = 1; i <= skillCount; i++) {
 
 
 
-/*document.addEventListener('DOMContentLoaded', function() {
-    const resumeForm = document.getElementById('resumeForm');
-    const previewContent = document.getElementById('previewContent');
-    const downloadPdfBtn = document.getElementById('downloadPdfBtn');
-    const downloadWordBtn = document.getElementById('downloadWordBtn');
 
-    resumeForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-       
-        // Build resume preview HTML
-        let html = `
-            <p><strong>Name:</strong> ${resumeForm.fullName.value}</p>
-            <p><strong>Email:</strong> ${resumeForm.email.value}</p>
-            <p><strong>Phone:</strong> ${resumeForm.phone.value}</p>
-            <p><strong>Address:</strong> ${resumeForm.address.value}</p>
-            <h3>Education</h3>
-             <p><strong>Education:</strong> ${resumeForm.education.value}</p>
-           
-            <h3>Work Experience</h3>
-             <p><strong>Work Experience:</strong> ${resumeForm.workexperience.value}</p>
-           
-            <h3>Skills</h3>
-             <p><strong>Skills:</strong> ${resumeForm.skills.value}</p>
-        `;
-
-        previewContent.innerHTML = html;
-    });
-
-    
-
-    downloadPdfBtn.addEventListener('click', function() {
-        // Code to generate and download PDF
-        // Example: Use libraries like jsPDF or pdfmake
-        alert('Downloading PDF...');
-    });
-
-    downloadWordBtn.addEventListener('click', function() {
-        // Code to generate and download Word document
-        // Example: Use Blob and FileSaver.js for client-side file download
-        alert('Downloading Word document...');
-    });
-}); */
 
 
 
